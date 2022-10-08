@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.fazz.fazzconnect.controler.AnPostControllerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-02T21:04:04" hostname="gf-eng-025.station" time="0.049">
+  <properties/>
+  <testcase name="shouldCallSendShipmentFromAutoLinkFileSuccessfully()" classname="com.fazz.fazzconnect.controler.AnPostControllerTests" time="0.049"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
