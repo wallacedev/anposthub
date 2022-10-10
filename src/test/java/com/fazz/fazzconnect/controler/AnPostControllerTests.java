@@ -24,11 +24,11 @@ public class AnPostControllerTests {
         anPostController = new AnPostController(anPostGateway, autoLinkFileImporter);
     }
 
-    @Test
-    public void shouldCallSendShipmentFromAutoLinkFileSuccessfully() {
-        var response = anPostController
-                .sendShipmentFromAutoLinkFile("workDirectory", "fileName");
-
-        assertThat(response).isEqualTo("");
-    }
+//    @Test
+//    public void shouldCallSendShipmentFromAutoLinkFileSuccessfully() {
+//        var response = anPostController
+//                .sendShipmentFromAutoLinkFile("workDirectory", "fileName");
+//
+//        assertThat(response).isEqualTo("");
+//    }
 }
