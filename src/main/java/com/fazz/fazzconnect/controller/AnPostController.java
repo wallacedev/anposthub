@@ -99,7 +99,7 @@ public class AnPostController {
                     orderId,
                     now().toString(),
                     "An Post",
-                    "An Post|Express International Packet",
+                    "Express International Packet",
                     recipientName,
                     address1,
                     address2,
