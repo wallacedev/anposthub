@@ -114,7 +114,7 @@ public class AnPostController {
             );
 
             log.info("Order id: {}", orderId);
-            log.info("Consignment: {}", consignment);
+            log.debug("Consignment: {}", consignment);
             consignments.add(consignment);
         }
         return consignments;
