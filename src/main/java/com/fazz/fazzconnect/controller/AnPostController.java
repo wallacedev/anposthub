@@ -115,8 +115,8 @@ public class AnPostController {
             );
 
             log.info("Order id: {}", orderId);
-            log.info("line a: {}", Arrays.toString(splitLineA));
-            log.info("line c: {}", Arrays.toString(splitLineC));
+            log.info("Carrier: {}", consignment.getCarrier());
+            log.info("Service ID: {}", consignment.getServiceId());
             consignments.add(consignment);
         }
         return consignments;
