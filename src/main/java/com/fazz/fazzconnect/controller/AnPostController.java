@@ -7,6 +7,7 @@ import com.fazz.fazzconnect.gateway.model.Item;
 import com.fazz.fazzconnect.gateway.model.Package;
 import com.fazz.fazzconnect.gateway.model.Recipient;
 import com.fazz.fazzconnect.importer.AutoLinkFileImporter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import java.util.List;
 import static java.time.LocalDateTime.now;
 
 @RestController
+@Slf4j
 public class AnPostController {
 
     private final AnPostGateway anPostGateway;
@@ -111,6 +113,8 @@ public class AnPostController {
                     recipient
             );
 
+            log.info("Order id: {}", orderId);
+            log.info("Consignment: {}", consignment);
             consignments.add(consignment);
         }
         return consignments;
