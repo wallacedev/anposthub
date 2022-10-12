@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -114,7 +115,8 @@ public class AnPostController {
             );
 
             log.info("Order id: {}", orderId);
-            log.info("Consignment:", consignment);
+            log.info("line a: {}", Arrays.toString(splitLineA));
+            log.info("line c: {}", Arrays.toString(splitLineC));
             consignments.add(consignment);
         }
         return consignments;
