@@ -5,6 +5,7 @@ import com.fazz.fazzconnect.gateway.model.Consignment;
 import com.fazz.fazzconnect.gateway.model.Package;
 import com.fazz.fazzconnect.gateway.model.Item;
 import com.fazz.fazzconnect.gateway.model.Recipient;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -19,6 +20,7 @@ import static org.springframework.http.HttpMethod.GET;
 import static org.springframework.http.HttpMethod.POST;
 
 @Component
+@Slf4j
 public class AnPostGateway {
 
     private final String baseUrl;
@@ -75,10 +77,13 @@ public class AnPostGateway {
         return exchange.getBody();
     }
 
-    public String sendShipment(List<Consignment> consignment) {
+    public String sendShipment(List<Consignment> consignments) {
         var url = baseUrl + "consignments";
+        log.info("Sending consignment");
+        log.info("url: {}", url);
+        log.info("consignments: {}", consignments);
         var exchange = restTemplate
-                        .exchange(url, POST, getAuthenticatedHeaderWithBody(consignment), String.class);
+                        .exchange(url, POST, getAuthenticatedHeaderWithBody(consignments), String.class);
 
         return exchange.getBody();
     }

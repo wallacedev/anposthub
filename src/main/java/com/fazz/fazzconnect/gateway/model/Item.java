@@ -2,9 +2,11 @@ package com.fazz.fazzconnect.gateway.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.ToString;
 
 @AllArgsConstructor
 @Getter
+@ToString
 public class Item {
     private String sku;
     private String name;

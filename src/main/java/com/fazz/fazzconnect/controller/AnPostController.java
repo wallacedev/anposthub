@@ -20,7 +20,6 @@ import java.util.List;
 import static java.time.LocalDateTime.now;
 
 @RestController
-@Slf4j
 public class AnPostController {
 
     private final AnPostGateway anPostGateway;
@@ -99,7 +98,7 @@ public class AnPostController {
                     orderId,
                     now().toString(),
                     "An Post",
-                    "Express International Packet",
+                    "An Post|Express International Packet",
                     recipientName,
                     address1,
                     address2,
@@ -114,9 +113,6 @@ public class AnPostController {
                     recipient
             );
 
-            log.info("Order id: {}", orderId);
-            log.info("Carrier: {}", consignment.getCarrier());
-            log.info("Service ID: {}", consignment.getServiceId());
             consignments.add(consignment);
         }
         return consignments;

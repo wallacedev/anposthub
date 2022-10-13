@@ -2,9 +2,11 @@ package com.fazz.fazzconnect.gateway.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.ToString;
 
 @AllArgsConstructor
 @Getter
+@ToString
 public class Recipient {
     private String name;
     private String first_name;
