@@ -92,7 +92,7 @@ public class AnPostController {
                     )
             );
             var address = new Address(address1, address2, "", city, state, postalCode, country, "");
-            var recipient = new Recipient(recipientName, "", "" , companyName, email, "", "", "" ,address);
+            var recipient = new Recipient(recipientName, "", "" , companyName, email, phoneNumber, tariff, "" ,address);
             var consignment = new Consignment (
                     batch,
                     orderId,
