@@ -15,7 +15,7 @@ local run
 
 windows:
 
-spring_profiles_active=local-win gradlew bootRun
+gradlew bootRun --args='--spring.profiles.active=local-win'
 
 mac:
 
