@@ -86,13 +86,13 @@ public class AnPostController {
 
             var consignmentPackage = new Package(
                     itemId, 12.2, 0.5, 10, Double.parseDouble(weight),
-                    Collections.singletonList(new Item(itemId, itemName, Integer.parseInt(quantity), tariff,
-                            "Ireland", "",
+                    Collections.singletonList(new Item(itemId, itemName, Integer.parseInt(quantity), "",
+                            "Ireland", tariff,
                             "", Double.parseDouble(value), Double.parseDouble(weight))
                     )
             );
             var address = new Address(address1, address2, "", city, state, postalCode, country, "");
-            var recipient = new Recipient(recipientName, "", "" , companyName, email, phoneNumber, tariff, "" ,address);
+            var recipient = new Recipient(recipientName, "", "" , companyName, email, phoneNumber, "", "" ,address);
             var consignment = new Consignment (
                     batch,
                     orderId,
