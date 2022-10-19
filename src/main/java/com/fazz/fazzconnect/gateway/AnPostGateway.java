@@ -68,16 +68,7 @@ public class AnPostGateway {
         return exchange.getBody();
     }
 
-    public String sendConsignments(ArrayList<Consignment> consignments) {
-        var url = baseUrl + "consignments";
-
-        var exchange = restTemplate
-                .exchange(url, POST, getAuthenticatedHeaderWithBody(consignments), String.class);
-
-        return exchange.getBody();
-    }
-
-    public String sendShipment(List<Consignment> consignments) {
+    public String sendConsignments(List<Consignment> consignments) {
         var url = baseUrl + "consignments";
         log.info("Sending consignment");
         log.info("url: {}", url);
@@ -88,34 +79,12 @@ public class AnPostGateway {
         return exchange.getBody();
     }
 
-    public String sendShipment() {
-        var url = baseUrl + "consignments";
+    public Consignment getConsignment(final String id) {
+        var url = baseUrl + "consignment/" + id;
 
-//        var consignment = new Consignment(
-//              "batch", "orderId", "2020-02-20T11:48:03+0000", "carrier",
-//                "An Post|Express International Packet",
-//                "buyerName", "shipAddress1", "shipAddress2", "shipCity",
-//                "shipState", "shipPostalCode", "shipCountry", "buyerEmail",
-//                "buyerPhoneNumber",
-//                Arrays.asList(new Package(
-//                        "reference", 12.2, 0.5, 10, 1,
-//                        Arrays.asList(new Item("sku", "name", 1, "tariff_code",
-//                                "IE", "harmonisation_code",
-//                                "fabric_content", 10, 2)
-//                        )
-//                )),
-//                new Recipient("name", "first_name", "last_name", "company_name",
-//                       "email_address@rmail.com", "contact_number", "tax_identifier",
-//                        "eori_number",
-//                        new Address("address1", "address2", "address3", "city", "state",
-//                                "SW1H 8ZW", "GB", "store_code")
-//                        )
-//        );
-//
-//        var exchange = restTemplate
-//                .exchange(url, POST, getAuthenticatedHeaderWithBody(Arrays.asList(consignment)), String.class);
-//
-//        return exchange.getBody();
-        return null;
+        var exchange = restTemplate
+                .exchange(url, GET, getAuthenticatedHeader(), Consignment.class);
+
+        return exchange.getBody();
     }
 }

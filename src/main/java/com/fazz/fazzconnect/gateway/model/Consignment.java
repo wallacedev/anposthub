@@ -2,13 +2,16 @@ package com.fazz.fazzconnect.gateway.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.List;
 
+@NoArgsConstructor
 @AllArgsConstructor
-@Getter
+@Data
 @ToString
 public class Consignment {
     private String batch;
@@ -30,4 +33,6 @@ public class Consignment {
     private String weight;
     private List<Package> packages;
     private Recipient recipient;
+    @JsonProperty("consignment_number")
+    private String trackingNumber;
 }
